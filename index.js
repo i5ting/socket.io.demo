@@ -1,12 +1,14 @@
 var express = require('express');
 var app = express();
-var server = require('http').createServer(app);
+var http = require('http');
+var server = http.createServer(app);
 var io = require('socket.io')(server);
 var path = require('path');
 
 // app.get('/', function(req, res){
 //     res.send('<h1>Welcome Realtime Server</h1>');
 // });
+http.globalAgent.maxSockets = Infinity;
 
 app.use(express.static(path.join(__dirname, 'public')));
 

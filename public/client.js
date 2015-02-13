@@ -54,11 +54,11 @@
 			var userhtml = '';
 			var separator = '';
 			for(key in onlineUsers) {
-		        if(onlineUsers.hasOwnProperty(key)){
+		    if(onlineUsers.hasOwnProperty(key)){
 					userhtml += separator+onlineUsers[key];
 					separator = '、';
 				}
-		    }
+      }
 			d.getElementById("onlinecount").innerHTML = '当前共有 '+onlineCount+' 人在线，在线列表：'+userhtml;
 			
 			//添加系统消息
@@ -132,6 +132,7 @@
 
 		}
 	};
+  
 	//通过“回车”提交用户名
 	d.getElementById("username").onkeydown = function(e) {
 		e = e || event;
@@ -139,6 +140,7 @@
 			CHAT.usernameSubmit();
 		}
 	};
+  
 	//通过“回车”提交信息
 	d.getElementById("content").onkeydown = function(e) {
 		e = e || event;
